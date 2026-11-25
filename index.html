@@ -173,7 +173,7 @@ h2{font-size:13px;font-weight:600;margin:0 2px 4px;color:var(--muted)}
       <div><dt>Tổng sàn</dt><dd>120 m²</dd></div>
       <div><dt>Phòng ngủ</dt><dd>2</dd></div>
       <div><dt>Mái</dt><dd>Tôn xốp</dd></div>
-      <div><dt>Dự toán</dt><dd>≈ 1,33 tỷ</dd></div>
+      <div><dt>Dự toán</dt><dd>≈ 1,36 tỷ</dd></div>
     </dl>
     <h2>Các phòng</h2>
     <ul class="rooms" id="roomList"></ul>
@@ -745,24 +745,24 @@ const railGlass=new THREE.MeshPhysicalMaterial({color:0xdfeee9,roughness:.05,tra
 
 /* ================= rooms ================= */
 const ROOMS=[
-  {id:'living',lv:1,name:'Phòng khách và gian thờ',rects:[[-4.8,-0.2,7.5,11.8]],floor:'g60',desc:'Bàn thờ 127 × 61 cm đặt trước vách gỗ ở cuối phòng, quay mặt ra cửa chính và mặt đường. Bộ bàn ghế gỗ, tường ảnh gia đình thay cho tivi. Mặt tiền là bộ cửa nhôm giả gỗ 4 cánh kính cường lực màu đen, rộng 4 m, nằm dưới ô văng ban công.'},
+  {id:'living',lv:1,name:'Phòng khách và gian thờ',rects:[[-4.8,-0.2,7.5,11.8]],floor:'g60',desc:'Bàn thờ 127 × 61 cm đặt trước vách gỗ ở cuối phòng, quay mặt ra cửa chính và mặt đường. Bộ bàn ghế gỗ, tường ảnh gia đình thay cho tivi. Mặt tiền là bộ cửa nhôm khung đen 4 cánh kính cường lực, rộng 4 m, hai bên ốp đá xám đậm, bậc tam cấp đá đen vân mây.'},
   {id:'stair',lv:1,name:'Cầu thang và lối đi',rects:[[-1.3,-0.2,5.6,7.5]],pick:[-4.8,-0.2,5.6,7.5],floor:'g60',dims:'Cầu thang chữ U 3,5 × 1,9 m, 22 bậc cao 16,4 cm',desc:'Hai vế thang rộng 95 cm, bậc ốp đá granite, lan can sắt tay vịn gỗ. Cửa sổ 1,2 m ở tường bên trái, ngang tầng 2, lấy sáng cho cả lồng thang. Lối đi 1,1 m nối phòng khách với bếp.'},
   {id:'wet',lv:1,outside:true,name:'Sân ướt sau bếp',rects:[[-4.9,-0.1,-2.35,0]],floor:'stone',desc:'Sân ướt 4,8 × 2,3 m ngay sau cửa bếp, dưới mái tôn: lát gạch chống trơn, phễu thu nước giữa sân, chậu giặt có vòi, chỗ đặt máy giặt và giàn phơi treo.'},
   {id:'wc1',lv:1,outside:true,name:'WC ngoài nhà',rects:[[3.0,4.7,-2.25,-0.75]],floor:'tile',desc:'WC đặt ở góc sân sau, dưới mái tôn, cửa quay về phía nhà. Bếp được giải phóng thêm khoảng 2,2 m².'},
   {id:'kitchen',lv:1,name:'Bếp và phòng ăn',rects:[[-4.8,-0.2,0.2,5.6]],floor:'stone',desc:'Tủ bếp chữ L, bàn ăn 6 chỗ, cửa nhôm kính mở ra sân hông. WC đã chuyển ra ngoài nên bếp rộng hơn, tủ lạnh dời vào góc trong.'},
   {id:'master',lv:2,name:'Phòng ngủ chính',rects:[[-4.8,-0.2,7.6,11.8]],floor:'g60',desc:'Giường 1,8 m, tủ áo 2,6 m, cửa kính lùa ra ban công nhỏ phía trước.'},
-  {id:'balcony',lv:2,name:'Ban công',rects:[[-4.8,-0.2,12.0,13.15]],floor:'deck',desc:'Ban công đua 1,2 m, lan can kính, bồn hoa ốp gạch, lam gỗ đứng bên trái. Phía trên là trần gỗ có đèn âm trần.'},
+  {id:'balcony',lv:2,name:'Ban công',rects:[[-4.8,-0.2,12.0,13.15]],floor:'deck',desc:'Ban công nằm trong khung viền trắng đua ra: bồn hoa ốp đá xám bên trái, lan can kính, lam nhôm đứng xám đậm bên phải. Phía trên là trần gỗ có đèn âm trần.'},
   {id:'hall2',lv:2,name:'Sảnh tầng 2',rects:[[-1.3,-0.2,5.6,7.5],[-2.55,-0.2,3.85,5.6]],floor:'g60',desc:'Sảnh đón cầu thang, lấy sáng từ cửa sổ hướng ra vườn bên hông.'},
   {id:'wc2',lv:2,name:'WC chung',rects:[[-4.8,-2.65,3.85,5.5]],floor:'tile',desc:'Rèm che khu tắm, bồn cầu và lavabo.'},
   {id:'bed2',lv:2,name:'Phòng ngủ 2',rects:[[-4.8,-0.2,0.2,3.75]],floor:'g60',desc:'Giường 1,6 m, tủ áo, bàn học. Cửa sổ duy nhất mở ra sân hông bên phải.'}
 ];
-const ITEMS={living:[['Cửa nhôm giả gỗ 4 cánh, kính đen, 4,0 × 2,8 m','22.400.000'],['Bộ bàn ghế gỗ (ghế dài 1,8 m, 2 ghế đơn, bàn)','8.000.000'],['Khung ảnh gia đình','1.500.000'],['Bàn thờ gỗ xoan 127 × 61 cm','6.000.000'],['Vách gỗ sau bàn thờ, 6 m²','3.600.000'],['Đồ thờ','3.000.000'],['Điều hòa 12.000 BTU','10.000.000']],
+const ITEMS={living:[['Cửa nhôm khung đen 4 cánh, kính cường lực, 4,0 × 2,8 m','22.400.000'],['Bộ bàn ghế gỗ (ghế dài 1,8 m, 2 ghế đơn, bàn)','8.000.000'],['Khung ảnh gia đình','1.500.000'],['Bàn thờ gỗ xoan 127 × 61 cm','6.000.000'],['Vách gỗ sau bàn thờ, 6 m²','3.600.000'],['Đồ thờ','3.000.000'],['Điều hòa 12.000 BTU','10.000.000']],
  kitchen:[['Tủ bếp dưới chữ L, 4,9 m','14.700.000'],['Tủ bếp trên, 2 m','4.400.000'],['Bếp từ đôi','5.000.000'],['Máy hút mùi','2.500.000'],['Chậu rửa và vòi','2.500.000'],['Tủ lạnh 300 L','9.000.000'],['Bàn ăn gỗ cao su 6 ghế','6.000.000'],['Đèn thả, 2 cái','1.000.000']],
  wet:[['Gạch chống trơn, 11 m²','3.300.000'],['Phễu thu sàn, ống thoát, vòi nước','1.500.000'],['Chậu giặt và giàn phơi treo','3.500.000'],['Máy giặt','6.000.000']],
  wc1:[['Xây WC ngoài nhà (móng, tường, mái, chống thấm)','18.000.000'],['Bồn cầu, lavabo, vòi, gương','9.000.000'],['Bình nóng lạnh 30 L','3.500.000']],
  stair:[['Bậc đá granite, 22 bậc','13.200.000'],['Lan can sắt, tay vịn gỗ, 9 m','9.900.000']],
  master:[['Bàn học và ghế','2.500.000'],['Giường gỗ 1,8 × 2 m','5.000.000'],['Đệm 1,8 m','5.000.000'],['Tủ áo MDF 2,6 m','7.800.000'],['Tab đầu giường, 2 cái','1.600.000'],['Đèn ngủ, 2 cái','600.000'],['Điều hòa 9.000 BTU','7.500.000']],
- balcony:[['Lan can kính, 3 m','6.600.000'],['Bồn hoa xây ốp gạch','2.500.000'],['Lam gỗ đứng mặt tiền','4.000.000'],['Trần gỗ nhựa, đèn âm trần','3.900.000']],
+ balcony:[['Lan can kính, 3 m','6.600.000'],['Bồn hoa xây ốp gạch','2.500.000'],['Lam nhôm đứng xám đậm','6.000.000'],['Trần gỗ nhựa, đèn âm trần','3.900.000']],
  wc2:[['Bồn cầu, lavabo, sen vòi, rèm tắm','9.000.000'],['Bình nóng lạnh 30 L','3.500.000']],
  bed2:[['Giường gỗ 1,6 × 2 m','4.000.000'],['Đệm 1,6 m','4.000.000'],['Tủ áo MDF 1,8 m','5.400.000'],['Bàn học và ghế','2.500.000'],['Tab đầu giường và đèn ngủ','1.100.000'],['Điều hòa 9.000 BTU','7.500.000']]};
 FLOORS.g60={name:'Gạch 60 × 60',mat:std({map:tileMaps({cols:2,rows:2,mx:1.2,h:35,s:8,l:86,vary:3,grout:'#c9c2b6',seed:19,speck:.03}).map,roughness:.25})};
@@ -781,11 +781,14 @@ use(level1,L1,H1);
 floorsFor(1);
 box(5.0,L1,12.0,concreteMat,-2.5,-L1/2,6.0,level1,false);
 const tileDark=(()=>{const t=tileMaps({cols:4,rows:8,mx:0.6,h:210,s:4,l:30,vary:7,grout:'#1c1f21',seed:23,gw:3,offset:true,nStr:2.5});return std({map:t.map,normalMap:t.normalMap,roughness:.55});})();
+const darkGrey=std({color:0x3a3f43,roughness:.6});
+const stoneDark=(()=>{const t=tileMaps({cols:2,rows:4,mx:1.2,h:210,s:5,l:28,vary:9,grout:'#15181a',seed:51,gw:2,marble:true,nStr:2});return std({map:t.map,normalMap:t.normalMap,roughness:.4});})();
+const graniteBlack=std({map:tileMaps({cols:2,rows:2,mx:1.2,h:220,s:5,l:12,vary:4,grout:'#0c0d0e',seed:61,gw:1,marble:true,speck:.03}).map,roughness:.2});
 const alGlass=std({color:0x8fa3aa,roughness:.05,metalness:.3,transparent:true,opacity:.5});
 const entryLeaf={hinge:'s',dir:-1,mat:alGlass};
-wall('x',11.9,-5,0,[OPEN(-2.5,4.0,2.8,fascia)],{outer:1});
+wall('x',11.9,-5,0,[OPEN(-2.5,4.0,2.8,fascia)],{outer:1,ext:(m,y0)=>(m<-4.4||m>-0.6||y0>2.5)?stoneDark:null});
 // 4-panel woodgrain aluminium door with black tempered glass; the two middle leaves stand open
-{const fr=std({map:TX.walnut.map,roughness:.35,metalness:.25}),gl=std({color:0x1d2326,roughness:.04,metalness:.4,transparent:true,opacity:.62});
+{const fr=std({color:0x1e2124,roughness:.35,metalness:.5}),gl=std({color:0x1d2326,roughness:.04,metalness:.4,transparent:true,opacity:.62});
   const panel=(cx,cz,ry)=>{const g=grp(cx,cz,ry);const W=0.98,Hh=2.7;
     const glass=new THREE.Mesh(new THREE.BoxGeometry(W-0.12,Hh-0.12,0.01),gl);glass.position.y=FY+Hh/2;noPick(glass);g.add(glass);
     for(const [w,h,x,y] of [[W,0.06,0,FY+0.03],[W,0.06,0,FY+Hh-0.03],[0.06,Hh,-W/2+0.03,FY+Hh/2],[0.06,Hh,W/2-0.03,FY+Hh/2],[W,0.05,0,FY+1.05]]) rbox(w,h,0.045,.006,fr,x,y,0,g,1);
@@ -898,11 +901,15 @@ wall('x',5.55,-4.8,-2.6,[],{t:0.1});
 glassRail(-1.3,6.55,0,-1.3,7.5,0);glassRail(-2.55,5.6,0,-1.3,5.6,0);
 colliders.push({x0:-1.35,x1:-1.25,z0:6.55,z1:7.5,y0:L2,y1:L2+1},{x0:-2.55,x1:-1.3,z0:5.55,z1:5.65,y0:L2,y1:L2+1});
 // small balcony: frame fins, glass rail, louvres, planters
-for(const x of [-4.9,-0.1]){box(0.2,4.1,1.2,wallMat,x,1.85,12.6);colliders.push({x0:x-0.1,x1:x+0.1,z0:12,z1:13.2,y0:L2,y1:L2+3});}
-glassRailOld(-4.55,13.12,0,-1.6,13.12,0,1.0);glassRailOld(-4.55,12.05,0,-4.55,13.12,0,1.0);
-rbox(1.4,0.95,0.42,.02,wallMat,-0.9,FY+0.475,12.94);rbox(1.3,0.03,0.32,.01,soilM,-0.9,FY+0.94,12.94,LV.g,1);collide(-0.9,12.94,1.4,0.42);
-{const r=rng(7);for(let i=0;i<9;i++){const x=-1.5+i*0.15;sph(0.12,hedgeMat,x,FY+1.02,12.94+(i%2?0.05:-0.05),LV.g,1,0.8,1);sph(0.05,std({color:[0xc93a5a,0xe8b33a,0x9b6ad1][i%3],roughness:.6}),x+0.03,FY+1.12,12.98);}}
-for(let i=0;i<5;i++) box(0.05,4.35,0.09,woodL,-4.97+i*0.085,1.95,13.25);
+for(const x of [-4.9,-0.1]){box(x<-1?0.3:0.2,4.1,1.25,x<-1?wallMat:darkGrey,x<-1?-4.85:x,1.85,12.62);colliders.push({x0:x-0.1,x1:x+0.1,z0:12,z1:13.2,y0:L2,y1:L2+3});}
+// balcony inside a white box frame (left), dark grey louvres (right), after the reference video
+rbox(1.0,0.95,0.42,.02,stoneDark,-4.2,FY+0.475,12.94);rbox(0.9,0.03,0.32,.01,soilM,-4.2,FY+0.94,12.94,LV.g,1);collide(-4.2,12.94,1.0,0.42);
+for(let i=0;i<6;i++) sph(0.16,hedgeMat,-4.58+i*0.15,FY+1.08,12.94+(i%2?0.06:-0.06),LV.g,1,0.9,1);
+glassRailOld(-3.7,13.12,0,-1.32,13.12,0,1.0);
+cyl(0.16,0.12,0.32,potM,-1.6,FY+0.16,12.85);sph(0.24,hedgeMat,-1.6,FY+0.52,12.85,LV.g,1,0.9,1);
+box(0.25,4.1,1.3,wallMat,-1.18,1.85,12.62);colliders.push({x0:-1.31,x1:-1.05,z0:12,z1:13.27,y0:L2,y1:L2+3});
+box(3.95,0.45,0.32,wallMat,-3.05,-0.12,13.12);
+for(let i=0;i<6;i++) box(0.07,4.35,0.26,darkGrey,-0.98+i*0.175,1.95,13.06);colliders.push({x0:-1.05,x1:0,z0:12.9,z1:13.2,y0:L2,y1:L2+3});
 
 // master bedroom (front)
 
@@ -948,7 +955,7 @@ use(roofGroup,0,H2);
   box(0.32,0.05,12.0,tonM,-2.5,ROOF+0.93,6.0,roofGroup);
   const pt=0.12,ph=1.0,py=ROOF+ph/2;
   box(5,ph,pt,wallMat,-2.5,py,13.2-pt/2);
-  box(5.2,0.4,0.3,lacq,-2.5,ROOF+0.2,13.25);box(5.1,0.05,0.25,blackM,-2.5,ROOF+0.42,13.2);box(5.0,0.35,0.22,lacq,-2.5,ROOF+0.62,13.16);box(5.0,0.04,0.24,blackM,-2.5,ROOF+0.82,13.16);
+  box(3.95,0.5,0.32,wallMat,-3.03,ROOF+0.15,13.28);box(5.05,0.35,0.24,darkGrey,-2.5,ROOF+0.55,13.12);
   box(4.8,0.012,1.2,woodL,-2.5,ROOF-0.006,12.6,roofGroup,false);for(const x of [-3.7,-1.3]){cyl(0.06,0.06,0.012,steel,x,ROOF-0.014,12.6,roofGroup,20).castShadow=false;cyl(0.045,0.045,0.014,glow,x,ROOF-0.016,12.6,roofGroup,20).castShadow=false;}box(5,ph,0.2,wallMat,-2.5,py,11.9);box(5,ph,pt,wallMat,-2.5,py,pt/2);box(pt,ph,13.2,wallMat,-5+pt/2,py,6.6);box(pt,ph,13.2,wallMat,-pt/2,py,6.6);
   // ceiling downlights
   const lights=[[1,-2.5,9.9],[1,-3.95,8.3],[1,-2.5,2.2],[1,-0.75,6.5],[2,-2.6,9.7],[2,-2.5,1.9],[2,-1.2,4.7]];
@@ -966,8 +973,8 @@ plane(10,20,yardM,0,-0.008,7.5,site);
 plane(320,6.4,std({map:TX.asphalt.map,normalMap:TX.asphalt.normalMap,roughness:.92}),0,-0.012,22.3,site);
 for(let i=-30;i<30;i++) plane(1.6,0.12,std({color:0xe8e4d8,roughness:.8}),i*4,-0.008,22.3,site);
 plane(320,1.5,concreteMat,0,-0.006,18.35,site);
-box(4.8,L1,1.2,stoneM,-2.5,L1/2,12.6,site);
-box(4.8,0.3,0.3,stoneM,-2.5,0.15,13.35,site);box(4.8,0.15,0.3,stoneM,-2.5,0.075,13.65,site);
+box(4.8,L1,1.2,graniteBlack,-2.5,L1/2,12.6,site);
+box(4.8,0.3,0.3,graniteBlack,-2.5,0.15,13.35,site);box(4.8,0.15,0.3,graniteBlack,-2.5,0.075,13.65,site);
 function planter(x,z,w,d){rbox(w,0.42,d,.03,stoneM,x,0.21,z,site);const sl=rbox(w-0.12,0.02,d-0.12,.01,soilM,x,0.415,z,site,1);sl.castShadow=false;collide(x,z,w,d);}
 /* side door landing and steps (concrete) */
 box(1.2,L1,1.6,concreteMat,0.6,L1/2,3.1,site);
